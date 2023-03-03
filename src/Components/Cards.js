@@ -94,6 +94,7 @@ const CartaPergunta = styled.div`
     img{
         width: 23px;
         height: auto;
+        cursor: pointer;
     }
     `;
 
@@ -124,6 +125,7 @@ const CartaBase = styled.div`
         position: absolute;
         right: 15px;
         bottom: 6px;
+        cursor: pointer;
     }
 `;
 
@@ -144,42 +146,25 @@ const ContainerBotoes = styled.div`
     justify-content: space-between;
 `;
 
-const BotaoNaoLembrei = styled.button`
+const BotaoBase=styled.button`
     border: none;
     border-radius: 5px;
     min-width: 85px;
     width: 30%;
     height: 40px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+`;
+
+const BotaoNaoLembrei = styled(BotaoBase)`
     background-color: #FF3030;
-    font-family: 'Recursive';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    color: #FFFFFF;
 `;
-const BotaoQuaseNaoLembrei = styled.button`
-    border: none;
-    border-radius: 5px;
-    min-width: 85px;
-    width: 30%;
-    height: 40px;
+const BotaoQuaseNaoLembrei = styled(BotaoBase)`
     background-color: #FF922E;
-    font-family: 'Recursive';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    color: #FFFFFF;
 `;
-const BotaoZap = styled.button`
-    border: none;
-    border-radius: 5px;
-    min-width: 85px;
-    width: 30%;
-    height: 40px;
+const BotaoZap = styled(BotaoBase)`
     background-color: #2FBE34;
-    font-family: 'Recursive';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    color: #FFFFFF;
 `;
