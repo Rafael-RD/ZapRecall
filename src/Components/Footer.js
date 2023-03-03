@@ -1,13 +1,13 @@
 import styled from "styled-components"
-
+import { icones, iconesDataTest } from "../assets/icones";
 
 export default function Footer({respostas, tamDeck}) {
 
     return (
-        <ContainerFooter>
+        <ContainerFooter data-test="footer">
             <Texto>{`${respostas.length}/${tamDeck} Concluídos`}</Texto>
             <ContainerRespostas>
-                {respostas.map((e,i)=><Imagem key={i} src={e} />)}
+                {respostas.map((e,i)=><Imagem data-test={iconesDataTest[e]} key={i} src={icones[e]} />)}
             </ContainerRespostas>
         </ContainerFooter>
     )

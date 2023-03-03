@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import icones from "../assets/icones";
+import { icones, iconesDataTest } from "../assets/icones";
 
 export default function Cards({ n, question, answer, responderApp }) {
     const [virada, setVirada] = useState(false);
@@ -41,21 +41,21 @@ export default function Cards({ n, question, answer, responderApp }) {
 
 
     return (
-        <Carta>
+        <Carta data-test="flashcard">
             <CartaPergunta cor={cor} selecionada={selecionada} >
-                <span>{`Pergunta ${n}`}</span>
-                <img onClick={() => setSelecionada(true)} src={icones[resposta]} alt="Play" />
+                <span data-test="flashcard-text" >{`Pergunta ${n}`}</span>
+                <img data-test={iconesDataTest[resposta]} onClick={() => resposta===0 && setSelecionada(true)} src={icones[resposta]} alt="Play" />
             </CartaPergunta>
             <CartaFrente selecionada={selecionada} virada={virada} >
-                <span>{question}</span>
-                <img onClick={() => setVirada(true)} src="assets/seta_virar.png" alt="Virar" />
+                <span data-test="flashcard-text" >{question}</span>
+                <img data-test="turn-btn" onClick={() => setVirada(true)} src="assets/seta_virar.png" alt="Virar" />
             </CartaFrente>
             <CartaTraseira selecionada={selecionada} virada={virada} >
-                <span>{answer}</span>
+                <span data-test="flashcard-text" >{answer}</span>
                 <ContainerBotoes>
-                    <BotaoNaoLembrei onClick={() => responder('nao')}>Não lembrei</BotaoNaoLembrei>
-                    <BotaoQuaseNaoLembrei onClick={() => responder('quase')}>Quase não lembrei</BotaoQuaseNaoLembrei>
-                    <BotaoZap onClick={() => responder('lembrei')}>Zap!</BotaoZap>
+                    <BotaoNaoLembrei data-test="no-btn" onClick={() => responder('nao')}>Não lembrei</BotaoNaoLembrei>
+                    <BotaoQuaseNaoLembrei data-test="partial-btn" onClick={() => responder('quase')}>Quase não lembrei</BotaoQuaseNaoLembrei>
+                    <BotaoZap data-test="zap-btn" onClick={() => responder('lembrei')}>Zap!</BotaoZap>
                 </ContainerBotoes>
             </CartaTraseira>
         </Carta>

@@ -1,7 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
 import deck from "./assets/decks"
-import icones from "./assets/icones"
 import Footer from "./Components/Footer"
 import Main from "./Components/Main"
 
@@ -11,7 +10,7 @@ export default function App() {
 
   function responderApp(resp) {
     //utilizar caminho para imagem no renderRespostas
-    setRenderRespostas([...renderRespostas, icones[resp]]);
+    setRenderRespostas([...renderRespostas, resp]);
     switch (resp) {
       case 1:
         //Lembrei
